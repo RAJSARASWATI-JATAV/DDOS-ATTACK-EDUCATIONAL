@@ -1,0 +1,76 @@
+{
+  "description": "Pre-configured test targets for educational purposes",
+  "author": "Rajsaraswati Jatav",
+  "warning": "ONLY USE ON SYSTEMS YOU OWN OR HAVE EXPLICIT PERMISSION TO TEST",
+  
+  "localhost_targets": {
+    "web_server": {
+      "target": "localhost",
+      "port": 80,
+      "description": "Local web server testing",
+      "recommended_method": "http",
+      "max_threads": 100
+    },
+    "ssh_server": {
+      "target": "localhost",
+      "port": 22,
+      "description": "Local SSH server testing",
+      "recommended_method": "tcp",
+      "max_threads": 50
+    },
+    "dns_server": {
+      "target": "localhost",
+      "port": 53,
+      "description": "Local DNS server testing",
+      "recommended_method": "dns",
+      "max_threads": 200
+    }
+  },
+  
+  "test_environments": {
+    "local_lab": {
+      "target": "192.168.1.100",
+      "port": 80,
+      "description": "Local lab environment",
+      "recommended_method": "http",
+      "max_threads": 500
+    },
+    "test_server": {
+      "target": "testserver.local",
+      "port": 80,
+      "description": "Dedicated test server",
+      "recommended_method": "slowloris",
+      "max_threads": 100
+    }
+  },
+  
+  "educational_scenarios": {
+    "scenario_1": {
+      "name": "Basic HTTP Load Testing",
+      "target": "localhost",
+      "port": 8080,
+      "method": "http",
+      "threads": 100,
+      "duration": 30,
+      "description": "Basic web server load testing scenario"
+    },
+    "scenario_2": {
+      "name": "Connection Exhaustion",
+      "target": "192.168.1.100",
+      "port": 80,
+      "method": "tcp",
+      "threads": 200,
+      "duration": 60,
+      "description": "TCP connection exhaustion testing"
+    },
+    "scenario_3": {
+      "name": "Application Layer Attack",
+      "target": "webapp.local",
+      "port": 443,
+      "method": "slowloris",
+      "threads": 50,
+      "duration": 120,
+      "description": "Application layer stress testing"
+    }
+  }
+}

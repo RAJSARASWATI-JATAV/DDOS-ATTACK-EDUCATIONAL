@@ -1,0 +1,24 @@
+# PROXY LIST FOR EDUCATIONAL TESTING
+# Created By: Rajsaraswati Jatav
+# Format: IP:PORT or HOST:PORT
+# Only use proxies you own or have permission to use
+
+# Local test proxies
+127.0.0.1:8080
+127.0.0.1:3128
+127.0.0.1:8888
+localhost:8080
+localhost:3128
+
+# Example format (replace with your own proxies)
+# proxy1.example.com:8080
+# proxy2.example.com:3128
+# 192.168.1.100:8080
+# 192.168.1.101:3128
+
+# Educational proxy servers (for testing purposes)
+# testproxy.local:8080
+# labproxy.local:3128
+
+# WARNING: Only use proxies you own or have explicit permission to use
+# Unauthorized use of proxy servers may be illegal

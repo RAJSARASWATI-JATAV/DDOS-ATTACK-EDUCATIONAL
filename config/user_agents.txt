@@ -1,0 +1,34 @@
+# USER AGENT LIST FOR EDUCATIONAL TESTING
+# Created By: Rajsaraswati Jatav
+# Various browser user agents for realistic testing
+
+# Chrome Browsers
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+
+# Firefox Browsers
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/119.0
+Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/119.0
+
+# Safari Browsers
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15
+Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1
+
+# Edge Browsers
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0
+
+# Mobile Browsers
+Mozilla/5.0 (Android 13; Mobile; rv:68.0) Gecko/68.0 Firefox/119.0
+Mozilla/5.0 (Linux; Android 13; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36
+
+# Curl and Wget (for API testing)
+curl/7.68.0
+Wget/1.20.3 (linux-gnu)
+
+# Custom Educational Agents
+DDOS-Educational-Toolkit/1.0 (Educational Testing)
+CyberSecurity-Learning-Tool/1.0
+Ethical-Hacking-Practice/1.0
+Network-Security-Research/1.0
