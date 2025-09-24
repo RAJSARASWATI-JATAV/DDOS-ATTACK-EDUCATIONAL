@@ -1,0 +1,42 @@
+{
+  "application": {
+    "name": "DDOS Attack Educational Toolkit",
+    "version": "1.0.0",
+    "author": "Rajsaraswati Jatav",
+    "github": "https://github.com/RAJSARASWATI-JATAV"
+  },
+  "attack_settings": {
+    "default_threads": 1000,
+    "max_threads": "unlimited",
+    "default_duration": 60,
+    "default_port": 80,
+    "timeout": 5,
+    "retry_attempts": 3
+  },
+  "interface": {
+    "sound_effects": true,
+    "visual_effects": true,
+    "colored_output": true,
+    "show_banner": true,
+    "auto_clear_screen": true
+  },
+  "logging": {
+    "enabled": true,
+    "level": "INFO",
+    "file_logging": true,
+    "console_logging": true,
+    "max_log_files": 10
+  },
+  "security": {
+    "educational_mode": true,
+    "require_confirmation": true,
+    "rate_limiting": false,
+    "ip_validation": true
+  },
+  "performance": {
+    "memory_optimization": true,
+    "cpu_optimization": true,
+    "network_optimization": true,
+    "auto_thread_scaling": true
+  }
+}
