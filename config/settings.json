@@ -1,42 +1,300 @@
 {
-  "application": {
-    "name": "DDOS Attack Educational Toolkit",
-    "version": "1.0.0",
+  "metadata": {
+    "version": "2.0.0",
     "author": "Rajsaraswati Jatav",
-    "github": "https://github.com/RAJSARASWATI-JATAV"
+    "github": "https://github.com/RAJSARASWATI-JATAV/DDOS-ATTACK-EDUCATIONAL",
+    "purpose": "Educational and Ethical Testing Only",
+    "created": "2025-09-25",
+    "last_updated": "2025-09-25"
   },
-  "attack_settings": {
-    "default_threads": 1000,
-    "max_threads": "unlimited",
-    "default_duration": 60,
-    "default_port": 80,
-    "timeout": 5,
-    "retry_attempts": 3
+  
+  "application": {
+    "name": "DDOS Educational Toolkit",
+    "debug_mode": false,
+    "verbose_logging": false,
+    "log_level": "INFO",
+    "max_log_size_mb": 50,
+    "log_retention_days": 30,
+    "enable_crash_reporting": true
   },
-  "interface": {
-    "sound_effects": true,
-    "visual_effects": true,
-    "colored_output": true,
+  
+  "display": {
+    "enable_colors": true,
+    "enable_animations": true,
+    "animation_speed": "medium",
     "show_banner": true,
-    "auto_clear_screen": true
+    "terminal_width": 80,
+    "progress_bar_style": "modern",
+    "theme": "dark"
   },
-  "logging": {
-    "enabled": true,
-    "level": "INFO",
-    "file_logging": true,
-    "console_logging": true,
-    "max_log_files": 10
+  
+  "audio": {
+    "enable_sounds": true,
+    "sound_volume": 0.7,
+    "startup_sound": true,
+    "attack_sounds": true,
+    "completion_sounds": true,
+    "error_sounds": true,
+    "sound_theme": "default"
   },
-  "security": {
-    "educational_mode": true,
-    "require_confirmation": true,
-    "rate_limiting": false,
-    "ip_validation": true
-  },
+  
   "performance": {
-    "memory_optimization": true,
-    "cpu_optimization": true,
-    "network_optimization": true,
-    "auto_thread_scaling": true
+    "max_threads": 1000,
+    "default_threads": 100,
+    "thread_timeout": 30,
+    "connection_timeout": 10,
+    "read_timeout": 30,
+    "max_retries": 3,
+    "retry_delay": 1,
+    "enable_threading_optimization": true,
+    "cpu_usage_limit": 90,
+    "memory_usage_limit_mb": 2048
+  },
+  
+  "attack_defaults": {
+    "default_duration": 60,
+    "max_duration": 300,
+    "min_duration": 1,
+    "default_attack_type": "http_flood",
+    "default_target": "127.0.0.1",
+    "default_port": 80,
+    "default_method": "GET",
+    "enable_random_delays": true,
+    "min_delay_ms": 1,
+    "max_delay_ms": 100
+  },
+  
+  "attack_limits": {
+    "max_concurrent_attacks": 5,
+    "max_threads_per_attack": 5000,
+    "max_requests_per_second": 10000,
+    "max_bandwidth_mbps": 100,
+    "enable_rate_limiting": true,
+    "rate_limit_requests_per_minute": 60000
+  },
+  
+  "safety": {
+    "require_confirmation": true,
+    "enable_safety_checks": true,
+    "auto_stop_on_error": false,
+    "max_error_rate": 50,
+    "enable_target_validation": true,
+    "blacklist_localhost": false,
+    "blacklist_private_ips": false,
+    "enable_authorization_check": true,
+    "require_legal_acknowledgment": true
+  },
+  
+  "network": {
+    "default_user_agent": "DDOS-Educational-Toolkit/2.0 (Educational Purpose)",
+    "enable_user_agent_rotation": true,
+    "custom_user_agents": [
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
+    ],
+    "enable_header_randomization": true,
+    "custom_headers": {
+      "Accept-Language": "en-US,en;q=0.9",
+      "Accept-Encoding": "gzip, deflate, br",
+      "Cache-Control": "no-cache",
+      "Pragma": "no-cache"
+    },
+    "enable_keep_alive": true,
+    "connection_pool_size": 100
+  },
+  
+  "proxy": {
+    "enable_proxy_support": true,
+    "enable_proxy_rotation": true,
+    "proxy_timeout": 10,
+    "proxy_max_retries": 3,
+    "proxy_validation_threads": 50,
+    "proxy_health_check_interval": 300,
+    "auto_remove_dead_proxies": true,
+    "proxy_rotation_strategy": "round_robin",
+    "proxy_file": "config/proxies.txt"
+  },
+  
+  "statistics": {
+    "enable_real_time_stats": true,
+    "stats_update_interval": 1,
+    "enable_detailed_stats": true,
+    "track_response_times": true,
+    "track_error_details": true,
+    "stats_retention_hours": 24,
+    "enable_performance_profiling": false,
+    "auto_cleanup_old_stats": true
+  },
+  
+  "reporting": {
+    "auto_generate_reports": true,
+    "report_formats": ["html", "json", "csv"],
+    "report_directory": "reports",
+    "include_charts": true,
+    "include_recommendations": true,
+    "report_template": "professional",
+    "auto_open_html_reports": false,
+    "compress_old_reports": true,
+    "max_report_age_days": 30
+  },
+  
+  "modules": {
+    "http_flood": {
+      "enabled": true,
+      "default_methods": ["GET", "POST", "HEAD"],
+      "enable_cache_busting": true,
+      "enable_session_simulation": true,
+      "custom_payloads": false
+    },
+    "tcp_flood": {
+      "enabled": true,
+      "default_payload_size": 1024,
+      "enable_random_payloads": true,
+      "enable_persistent_connections": false
+    },
+    "udp_flood": {
+      "enabled": true,
+      "default_payload_size": 512,
+      "enable_amplification": false,
+      "max_packet_size": 65507
+    },
+    "syn_flood": {
+      "enabled": true,
+      "enable_ip_spoofing": false,
+      "random_source_ports": true,
+      "custom_tcp_options": false
+    },
+    "slowloris": {
+      "enabled": true,
+      "connection_count": 200,
+      "header_delay": 15,
+      "keep_alive_interval": 10
+    },
+    "rudy_attack": {
+      "enabled": true,
+      "post_size": 1000000,
+      "send_rate": 1,
+      "content_type": "multipart/form-data"
+    },
+    "dns_flood": {
+      "enabled": true,
+      "query_types": ["A", "AAAA", "MX", "TXT"],
+      "enable_amplification": false,
+      "random_domains": true
+    },
+    "cc_attack": {
+      "enabled": true,
+      "enable_javascript_simulation": false,
+      "session_persistence": true,
+      "cache_bypass_methods": ["timestamp", "random", "uuid"]
+    }
+  },
+  
+  "validation": {
+    "validate_targets": true,
+    "validate_ports": true,
+    "validate_thread_counts": true,
+    "validate_durations": true,
+    "check_target_reachability": true,
+    "dns_resolution_timeout": 5,
+    "connection_test_timeout": 3
+  },
+  
+  "updates": {
+    "auto_check_updates": true,
+    "check_interval_hours": 24,
+    "auto_download_updates": false,
+    "auto_install_updates": false,
+    "backup_before_update": true,
+    "update_channel": "stable",
+    "notify_beta_releases": false
+  },
+  
+  "security": {
+    "encrypt_sensitive_data": true,
+    "secure_temp_files": true,
+    "clear_memory_on_exit": true,
+    "enable_audit_logging": true,
+    "log_user_actions": true,
+    "session_timeout_minutes": 60,
+    "require_authentication": false
+  },
+  
+  "integration": {
+    "enable_api": false,
+    "api_port": 8080,
+    "api_host": "127.0.0.1",
+    "enable_webhooks": false,
+    "webhook_url": "",
+    "enable_siem_export": false,
+    "export_format": "json"
+  },
+  
+  "development": {
+    "enable_debug_mode": false,
+    "enable_profiling": false,
+    "enable_memory_monitoring": false,
+    "enable_performance_metrics": false,
+    "debug_output_file": "logs/debug.log",
+    "profiling_output_dir": "logs/profiling"
+  },
+  
+  "educational": {
+    "show_learning_tips": true,
+    "enable_guided_mode": true,
+    "show_security_explanations": true,
+    "include_defense_recommendations": true,
+    "highlight_ethical_considerations": true,
+    "provide_legal_guidance": true,
+    "tutorial_mode": false
+  },
+  
+  "notifications": {
+    "enable_desktop_notifications": true,
+    "enable_email_notifications": false,
+    "email_smtp_server": "",
+    "email_port": 587,
+    "email_username": "",
+    "email_password": "",
+    "notification_types": {
+      "attack_started": true,
+      "attack_completed": true,
+      "attack_failed": true,
+      "high_error_rate": true,
+      "target_unreachable": true,
+      "update_available": true
+    }
+  },
+  
+  "backup": {
+    "auto_backup_config": true,
+    "backup_interval_hours": 24,
+    "max_backup_files": 10,
+    "backup_directory": "backups",
+    "compress_backups": true,
+    "backup_logs": false,
+    "backup_reports": true
+  },
+  
+  "compliance": {
+    "enforce_legal_compliance": true,
+    "require_authorization_proof": false,
+    "log_all_activities": true,
+    "enable_compliance_reporting": false,
+    "compliance_contact": "rajsaraswati.jatav@gmail.com",
+    "jurisdiction": "India",
+    "data_retention_policy": "30 days"
+  },
+  
+  "advanced": {
+    "custom_modules_directory": "modules/custom",
+    "enable_plugin_system": false,
+    "plugin_directory": "plugins",
+    "custom_scripts_directory": "scripts/custom",
+    "enable_scripting": false,
+    "scripting_language": "python",
+    "enable_remote_control": false,
+    "remote_control_port": 9090
   }
 }
