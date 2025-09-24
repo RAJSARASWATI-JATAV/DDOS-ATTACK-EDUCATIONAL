@@ -1,0 +1,120 @@
+#!/usr/bin/env python3
+"""
+Logo Generator for DDOS Educational Toolkit
+Author: Rajsaraswati Jatav
+Purpose: Generate professional logo for the toolkit
+"""
+
+from PIL import Image, ImageDraw, ImageFont
+import os
+
+def create_professional_logo():
+    """Create a professional logo for DDOS Educational Toolkit"""
+    
+    # Create directory
+    os.makedirs('assets/visuals', exist_ok=True)
+    
+    # Logo dimensions
+    width, height = 512, 512
+    
+    # Create image with gradient background
+    img = Image.new('RGBA', (width, height), (255, 255, 255, 0))
+    draw = ImageDraw.Draw(img)
+    
+    # Create gradient background
+    for i in range(height):
+        # Purple to blue gradient
+        r = int(102 + (118 - 102) * i / height)  # 667eea to 764ba2
+        g = int(126 + (75 - 126) * i / height)
+        b = int(234 + (162 - 234) * i / height)
+        draw.line([(0, i), (width, i)], fill=(r, g, b, 255))
+    
+    # Draw shield shape (security theme)
+    shield_points = [
+        (width//2, 50),           # Top point
+        (width//2 + 100, 120),    # Top right
+        (width//2 + 100, 300),    # Bottom right
+        (width//2, 400),          # Bottom point
+        (width//2 - 100, 300),    # Bottom left
+        (width//2 - 100, 120)     # Top left
+    ]
+    
+    # Shield background
+    draw.polygon(shield_points, fill=(255, 255, 255, 200), outline=(255, 255, 255, 255), width=3)
+    
+    # Draw circuit pattern (tech theme)
+    circuit_color = (102, 126, 234, 180)
+    
+    # Horizontal lines
+    for y in [180, 220, 260, 300]:
+        draw.line([(width//2 - 80, y), (width//2 + 80, y)], fill=circuit_color, width=2)
+    
+    # Vertical lines
+    for x in [width//2 - 40, width//2, width//2 + 40]:
+        draw.line([(x, 160), (x, 320)], fill=circuit_color, width=2)
+    
+    # Draw connection nodes
+    for y in [180, 220, 260, 300]:
+        for x in [width//2 - 40, width//2, width//2 + 40]:
+            draw.ellipse([x-4, y-4, x+4, y+4], fill=circuit_color)
+    
+    # Try to load a font, fallback to default if not available
+    try:
+        title_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 36)
+        subtitle_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 16)
+    except:
+        title_font = ImageFont.load_default()
+        subtitle_font = ImageFont.load_default()
+    
+    # Add title text
+    title_text = "DDOS"
+    title_bbox = draw.textbbox((0, 0), title_text, font=title_font)
+    title_width = title_bbox[2] - title_bbox[0]
+    title_x = (width - title_width) // 2
+    
+    # Text with shadow effect
+    draw.text((title_x + 2, 340 + 2), title_text, fill=(0, 0, 0, 100), font=title_font)
+    draw.text((title_x, 340), title_text, fill=(255, 255, 255, 255), font=title_font)
+    
+    # Add subtitle
+    subtitle_text = "EDUCATIONAL TOOLKIT"
+    subtitle_bbox = draw.textbbox((0, 0), subtitle_text, font=subtitle_font)
+    subtitle_width = subtitle_bbox[2] - subtitle_bbox[0]
+    subtitle_x = (width - subtitle_width) // 2
+    
+    draw.text((subtitle_x + 1, 380 + 1), subtitle_text, fill=(0, 0, 0, 100), font=subtitle_font)
+    draw.text((subtitle_x, 380), subtitle_text, fill=(255, 255, 255, 255), font=subtitle_font)
+    
+    # Add author signature
+    author_text = "By Rajsaraswati Jatav"
+    author_bbox = draw.textbbox((0, 0), author_text, font=subtitle_font)
+    author_width = author_bbox[2] - author_bbox[0]
+    author_x = (width - author_width) // 2
+    
+    draw.text((author_x, 420), author_text, fill=(255, 255, 255, 180), font=subtitle_font)
+    
+    # Add warning icon at top
+    warning_points = [
+        (width//2, 70),
+        (width//2 - 15, 95),
+        (width//2 + 15, 95)
+    ]
+    draw.polygon(warning_points, fill=(255, 215, 0, 255))
+    draw.text((width//2 - 4, 78), "!", fill=(0, 0, 0, 255), font=title_font)
+    
+    # Save the logo
+    img.save('assets/visuals/logo.png', 'PNG')
+    print("✅ Professional logo created: assets/visuals/logo.png")
+    
+    # Also create a smaller version for favicon
+    favicon = img.resize((64, 64), Image.Resampling.LANCZOS)
+    favicon.save('assets/visuals/favicon.png', 'PNG')
+    print("✅ Favicon created: assets/visuals/favicon.png")
+
+if __name__ == "__main__":
+    # Install required package first: pip install Pillow
+    try:
+        create_professional_logo()
+    except ImportError:
+        print("❌ Please install Pillow: pip install Pillow")
+        print("Alternative: Download logo from https://logo.com or design your own")
